@@ -16,7 +16,7 @@
             </div>
             <form action="">
                 <div class="signin-link">
-                    Sign In? <a href="#"> Login</a>
+                    Sign In? <a href="{{url('login')}}"> Login</a>
                 </div>
                 <div class="signin-link">
                     Join Now? <a href="{{url('registration')}}"> Registration</a>

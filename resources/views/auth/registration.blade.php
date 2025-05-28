@@ -10,18 +10,23 @@
 </head>
 <body>
      <div class="container">
+        <span style="color:yellow">{{$errors->first('email')}}<br></span>
+        <span style="color:red">{{$errors->first('password')}}<br></span>
+        <span style="color:red">{{$errors->first('confirm_password')}}<br></span>
+        @include('message')
         <div class="wrapper">
             <div class="title">
                 <span>Registration  Page</span>
             </div>
-            <form action="">
+            <form action="{{url('registration_post')}}" method="POST">
+                @csrf
                 <div class="row">
                     <i class="fas fa-user"></i>
-                    <input type="text" value="" placeholder="Username" required name="name">
+                    <input type="text" value="{{old('name')}}" placeholder="Username" required name="name">
                 </div>
                 <div class="row">
                     <i class="fas fa-user"></i>
-                    <input type="email" value="" placeholder="Email" required name="email">
+                    <input type="email" value="{{old('email')}}" placeholder="Email" required name="email">
                 </div>
                 <div class="row">
                     <i class="fas fa-lock"></i>
@@ -39,11 +44,11 @@
                         <option value="0">User</option>
                     </select>
                 </div>
-                <div class="pass"><a href="">Forgot Password</a></div>
+                <div class="pass"><a href="{{url('forgot')}}">Forgot Password</a></div>
                 <div class="row button">
                     <input type="submit" value="Registration">
                 </div>
-                <div class="signup-link">Sign In? <a href="">Login</a></div>
+                <div class="signup-link">Sign In? <a href="{{url('login')}}">Login</a></div>
                 <div class="signup-link">Welcome Page? <a href="{{url('/')}}">Welcome Page</a></div>
             </form>
         </div>
