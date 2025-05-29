@@ -15,14 +15,15 @@
             <div class="title">
                 <span>Login Page</span>
             </div>
-            <form action="">
+            <form action="{{url('login_post')}}" method="POST">
+                @csrf
                 <div class="row">
                     <i class="fas fa-user"></i>
-                    <input type="email" value="" placeholder="Email" required name="email">
+                    <input type="email" value="{{old('email')}}" placeholder="Email" required name="email">
                 </div>
                 <div class="row">
                     <i class="fas fa-lock"></i>
-                    <input type="password" value="" placeholder="Password" required name="password">
+                    <input type="password" value="{{old('password')}}" placeholder="Password" required name="password">
                 </div>
                 
                 
