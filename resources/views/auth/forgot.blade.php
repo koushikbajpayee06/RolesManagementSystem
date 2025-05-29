@@ -10,8 +10,7 @@
 </head>
 <body>
      <div class="container">
-        @include('message')
-        <div class="wrapper">
+        @include('message')  <div class="wrapper">
             <div class="title">
                 <span>Forgot Password</span>
             </div>
